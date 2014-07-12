@@ -1,0 +1,5 @@
+@charset "utf-8";
+#mbox{padding:0px; border:0px;}
+#ol{background-image:url(images/overlay.png);}
+
+* html #ol{background-image:none; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/overlay.png", sizingMethod="scale");}

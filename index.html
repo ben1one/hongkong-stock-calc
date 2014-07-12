@@ -1,0 +1,1894 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="viewport" content="width=device-width; initial-scale2=1.0; maximum-scale=1.5; user-scalable=1;">
+<meta name="title" content="股票交易計算器 calc.waylonchan.net" /> 
+<meta name="description" content="計算在不同證券商買賣港股時的費用以及實際收益，並可將計算結果儲存以作記錄" />
+<link rel="image_src" href="http://calc.waylonchan.net/new/images/fb_logo.png" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+<link type="text/css" href="stylesheet.css" rel="stylesheet">
+<link rel="stylesheet" href="modaldbox.css" type="text/css" />
+<link rel="shortcut icon" href="images/logo.ico" type="image/x-icon" />
+<link rel="bookmark" href="images/logo.ico" type="image/x-icon" />
+<title>股票交易計算器</title></head>
+<script type="text/javascript" src="always_on_top.js" charset="utf-8"></script>
+<script type="text/javascript" src="modaldbox.js" charset="utf-8"></script>
+<script language="javascript" src="common.js" charset="utf-8"></script>
+<script language="javascript" src="index.js" charset="utf-8"></script>
+<script language="javascript" charset="utf-8">
+function returnSecInfo() {
+	var secInfo = new Array();
+	secInfo[0] = new Array(15);
+	secInfo[0][0]="1";
+	secInfo[0][1]="1";
+	secInfo[0][2]="匯豐網上理財";
+	secInfo[0][3]="匯豐銀行";
+	secInfo[0][4]="匯豐";
+	secInfo[0][5]=0.0025;
+	secInfo[0][6]=100;
+	secInfo[0][7]=0.000000;
+	secInfo[0][8]=0;
+	secInfo[0][9]=999999;
+	secInfo[0][10]=5;
+	secInfo[0][11]=30;
+	secInfo[0][12]=200;
+	secInfo[0][13]=0;
+	secInfo[0][14]=0;
+	secInfo[1] = new Array(15);
+	secInfo[1][0]="1";
+	secInfo[1][1]="38";
+	secInfo[1][2]="自動電話投資服務";
+	secInfo[1][3]="匯豐銀行";
+	secInfo[1][4]="匯豐";
+	secInfo[1][5]=0.0025;
+	secInfo[1][6]=100;
+	secInfo[1][7]=0.000000;
+	secInfo[1][8]=0;
+	secInfo[1][9]=1e+08;
+	secInfo[1][10]=5;
+	secInfo[1][11]=30;
+	secInfo[1][12]=200;
+	secInfo[1][13]=0;
+	secInfo[1][14]=0;
+	secInfo[2] = new Array(15);
+	secInfo[2][0]="1";
+	secInfo[2][1]="39";
+	secInfo[2][2]="專人電話／櫃位";
+	secInfo[2][3]="匯豐銀行";
+	secInfo[2][4]="匯豐";
+	secInfo[2][5]=0.004;
+	secInfo[2][6]=100;
+	secInfo[2][7]=0.000000;
+	secInfo[2][8]=0;
+	secInfo[2][9]=1e+08;
+	secInfo[2][10]=5;
+	secInfo[2][11]=30;
+	secInfo[2][12]=200;
+	secInfo[2][13]=0;
+	secInfo[2][14]=0;
+	secInfo[3] = new Array(15);
+	secInfo[3][0]="2";
+	secInfo[3][1]="2";
+	secInfo[3][2]="網上交易";
+	secInfo[3][3]="恒生銀行";
+	secInfo[3][4]="恒生";
+	secInfo[3][5]=0.0025;
+	secInfo[3][6]=100;
+	secInfo[3][7]=0.000000;
+	secInfo[3][8]=0;
+	secInfo[3][9]=999999;
+	secInfo[3][10]=5;
+	secInfo[3][11]=30;
+	secInfo[3][12]=188;
+	secInfo[3][13]=0;
+	secInfo[3][14]=0;
+	secInfo[4] = new Array(15);
+	secInfo[4][0]="3";
+	secInfo[4][1]="3";
+	secInfo[4][2]="網上/自動電話";
+	secInfo[4][3]="中國銀行(香港)";
+	secInfo[4][4]="中銀";
+	secInfo[4][5]=0.002;
+	secInfo[4][6]=100;
+	secInfo[4][7]=0.000000;
+	secInfo[4][8]=0;
+	secInfo[4][9]=999999;
+	secInfo[4][10]=2.5;
+	secInfo[4][11]=30;
+	secInfo[4][12]=200;
+	secInfo[4][13]=0;
+	secInfo[4][14]=0;
+	secInfo[5] = new Array(15);
+	secInfo[5][0]="3";
+	secInfo[5][1]="51";
+	secInfo[5][2]="專人接聽交易";
+	secInfo[5][3]="中國銀行(香港)";
+	secInfo[5][4]="中銀";
+	secInfo[5][5]=0.005;
+	secInfo[5][6]=100;
+	secInfo[5][7]=0.000000;
+	secInfo[5][8]=0;
+	secInfo[5][9]=0;
+	secInfo[5][10]=5;
+	secInfo[5][11]=30;
+	secInfo[5][12]=200;
+	secInfo[5][13]=0;
+	secInfo[5][14]=0;
+	secInfo[6] = new Array(15);
+	secInfo[6][0]="4";
+	secInfo[6][1]="4";
+	secInfo[6][2]="網上交易";
+	secInfo[6][3]="東亞證券";
+	secInfo[6][4]="東亞";
+	secInfo[6][5]=0.0025;
+	secInfo[6][6]=80;
+	secInfo[6][7]=0.000020;
+	secInfo[6][8]=2;
+	secInfo[6][9]=100;
+	secInfo[6][10]=0;
+	secInfo[6][11]=0;
+	secInfo[6][12]=0;
+	secInfo[6][13]=0;
+	secInfo[6][14]=0;
+	secInfo[7] = new Array(15);
+	secInfo[7][0]="5";
+	secInfo[7][1]="5";
+	secInfo[7][2]="電子交易系統";
+	secInfo[7][3]="交通銀行";
+	secInfo[7][4]="交銀";
+	secInfo[7][5]=0.002;
+	secInfo[7][6]=100;
+	secInfo[7][7]=0.000000;
+	secInfo[7][8]=0;
+	secInfo[7][9]=999999;
+	secInfo[7][10]=0;
+	secInfo[7][11]=0;
+	secInfo[7][12]=0;
+	secInfo[7][13]=0;
+	secInfo[7][14]=0;
+	secInfo[8] = new Array(15);
+	secInfo[8][0]="5";
+	secInfo[8][1]="58";
+	secInfo[8][2]="通達理財客戶";
+	secInfo[8][3]="交通銀行";
+	secInfo[8][4]="交銀";
+	secInfo[8][5]=0.00125;
+	secInfo[8][6]=100;
+	secInfo[8][7]=0.000000;
+	secInfo[8][8]=0;
+	secInfo[8][9]=999999;
+	secInfo[8][10]=0;
+	secInfo[8][11]=0;
+	secInfo[8][12]=0;
+	secInfo[8][13]=0;
+	secInfo[8][14]=0;
+	secInfo[9] = new Array(15);
+	secInfo[9][0]="5";
+	secInfo[9][1]="59";
+	secInfo[9][2]="交銀理財客戶";
+	secInfo[9][3]="交通銀行";
+	secInfo[9][4]="交銀";
+	secInfo[9][5]=0.0015;
+	secInfo[9][6]=100;
+	secInfo[9][7]=0.000000;
+	secInfo[9][8]=0;
+	secInfo[9][9]=999999;
+	secInfo[9][10]=0;
+	secInfo[9][11]=0;
+	secInfo[9][12]=0;
+	secInfo[9][13]=0;
+	secInfo[9][14]=0;
+	secInfo[10] = new Array(15);
+	secInfo[10][0]="6";
+	secInfo[10][1]="6";
+	secInfo[10][2]="電子交易服務";
+	secInfo[10][3]="永亨銀行";
+	secInfo[10][4]="永亨";
+	secInfo[10][5]=0.0025;
+	secInfo[10][6]=75;
+	secInfo[10][7]=0.000000;
+	secInfo[10][8]=0;
+	secInfo[10][9]=999999;
+	secInfo[10][10]=0;
+	secInfo[10][11]=0;
+	secInfo[10][12]=999999;
+	secInfo[10][13]=0;
+	secInfo[10][14]=0;
+	secInfo[11] = new Array(15);
+	secInfo[11][0]="6";
+	secInfo[11][1]="60";
+	secInfo[11][2]="其他交易途經";
+	secInfo[11][3]="永亨銀行";
+	secInfo[11][4]="永亨";
+	secInfo[11][5]=0.0025;
+	secInfo[11][6]=100;
+	secInfo[11][7]=0.000000;
+	secInfo[11][8]=0;
+	secInfo[11][9]=999999;
+	secInfo[11][10]=0;
+	secInfo[11][11]=0;
+	secInfo[11][12]=999999;
+	secInfo[11][13]=0;
+	secInfo[11][14]=0;
+	secInfo[12] = new Array(15);
+	secInfo[12][0]="7";
+	secInfo[12][1]="7";
+	secInfo[12][2]="網上證券買賣";
+	secInfo[12][3]="創興銀行";
+	secInfo[12][4]="創興";
+	secInfo[12][5]=0.00125;
+	secInfo[12][6]=80;
+	secInfo[12][7]=0.000020;
+	secInfo[12][8]=2;
+	secInfo[12][9]=100;
+	secInfo[12][10]=0;
+	secInfo[12][11]=0;
+	secInfo[12][12]=0;
+	secInfo[12][13]=20;
+	secInfo[12][14]=20;
+	secInfo[13] = new Array(15);
+	secInfo[13][0]="7";
+	secInfo[13][1]="61";
+	secInfo[13][2]="電話/分行櫃位";
+	secInfo[13][3]="創興銀行";
+	secInfo[13][4]="創興";
+	secInfo[13][5]=0.0025;
+	secInfo[13][6]=80;
+	secInfo[13][7]=0.000020;
+	secInfo[13][8]=2;
+	secInfo[13][9]=100;
+	secInfo[13][10]=0;
+	secInfo[13][11]=0;
+	secInfo[13][12]=0;
+	secInfo[13][13]=20;
+	secInfo[13][14]=20;
+	secInfo[14] = new Array(15);
+	secInfo[14][0]="7";
+	secInfo[14][1]="62";
+	secInfo[14][2]="流動網絡證券服務";
+	secInfo[14][3]="創興銀行";
+	secInfo[14][4]="創興";
+	secInfo[14][5]=0.00125;
+	secInfo[14][6]=60;
+	secInfo[14][7]=0.000020;
+	secInfo[14][8]=2;
+	secInfo[14][9]=100;
+	secInfo[14][10]=0;
+	secInfo[14][11]=0;
+	secInfo[14][12]=0;
+	secInfo[14][13]=20;
+	secInfo[14][14]=20;
+	secInfo[15] = new Array(15);
+	secInfo[15][0]="8";
+	secInfo[15][1]="8";
+	secInfo[15][2]="Citigold Private";
+	secInfo[15][3]="花旗銀行";
+	secInfo[15][4]="花旗";
+	secInfo[15][5]=0.0018;
+	secInfo[15][6]=100;
+	secInfo[15][7]=0.000000;
+	secInfo[15][8]=0;
+	secInfo[15][9]=999999;
+	secInfo[15][10]=0;
+	secInfo[15][11]=0;
+	secInfo[15][12]=999999;
+	secInfo[15][13]=0;
+	secInfo[15][14]=0;
+	secInfo[16] = new Array(15);
+	secInfo[16][0]="8";
+	secInfo[16][1]="54";
+	secInfo[16][2]="Citigold";
+	secInfo[16][3]="花旗銀行";
+	secInfo[16][4]="花旗";
+	secInfo[16][5]=0.002;
+	secInfo[16][6]=100;
+	secInfo[16][7]=0.000000;
+	secInfo[16][8]=0;
+	secInfo[16][9]=0;
+	secInfo[16][10]=0;
+	secInfo[16][11]=0;
+	secInfo[16][12]=0;
+	secInfo[16][13]=0;
+	secInfo[16][14]=0;
+	secInfo[17] = new Array(15);
+	secInfo[17][0]="8";
+	secInfo[17][1]="55";
+	secInfo[17][2]="Citibanking";
+	secInfo[17][3]="花旗銀行";
+	secInfo[17][4]="花旗";
+	secInfo[17][5]=0.0025;
+	secInfo[17][6]=100;
+	secInfo[17][7]=0.000000;
+	secInfo[17][8]=0;
+	secInfo[17][9]=0;
+	secInfo[17][10]=0;
+	secInfo[17][11]=0;
+	secInfo[17][12]=0;
+	secInfo[17][13]=0;
+	secInfo[17][14]=0;
+	secInfo[18] = new Array(15);
+	secInfo[18][0]="9";
+	secInfo[18][1]="9";
+	secInfo[18][2]="網上交易";
+	secInfo[18][3]="富邦銀行";
+	secInfo[18][4]="富邦";
+	secInfo[18][5]=0.0025;
+	secInfo[18][6]=80;
+	secInfo[18][7]=0.000020;
+	secInfo[18][8]=2;
+	secInfo[18][9]=999999;
+	secInfo[18][10]=0;
+	secInfo[18][11]=0;
+	secInfo[18][12]=0;
+	secInfo[18][13]=0;
+	secInfo[18][14]=0;
+	secInfo[19] = new Array(15);
+	secInfo[19][0]="10";
+	secInfo[19][1]="10";
+	secInfo[19][2]="網上交易";
+	secInfo[19][3]="上海商業銀行";
+	secInfo[19][4]="上商";
+	secInfo[19][5]=0.0025;
+	secInfo[19][6]=100;
+	secInfo[19][7]=0.000000;
+	secInfo[19][8]=0;
+	secInfo[19][9]=999999;
+	secInfo[19][10]=0;
+	secInfo[19][11]=0;
+	secInfo[19][12]=999999;
+	secInfo[19][13]=0;
+	secInfo[19][14]=0;
+	secInfo[20] = new Array(15);
+	secInfo[20][0]="11";
+	secInfo[20][1]="11";
+	secInfo[20][2]="理財e時代";
+	secInfo[20][3]="工商銀行(亞洲)";
+	secInfo[20][4]="工銀";
+	secInfo[20][5]=0.0018;
+	secInfo[20][6]=88;
+	secInfo[20][7]=0.000020;
+	secInfo[20][8]=2;
+	secInfo[20][9]=100;
+	secInfo[20][10]=0;
+	secInfo[20][11]=0;
+	secInfo[20][12]=0;
+	secInfo[20][13]=0;
+	secInfo[20][14]=0;
+	secInfo[21] = new Array(15);
+	secInfo[21][0]="11";
+	secInfo[21][1]="43";
+	secInfo[21][2]="私人銀行/理財金賬";
+	secInfo[21][3]="工商銀行(亞洲)";
+	secInfo[21][4]="工銀";
+	secInfo[21][5]=0.0015;
+	secInfo[21][6]=88;
+	secInfo[21][7]=0.000020;
+	secInfo[21][8]=2;
+	secInfo[21][9]=100;
+	secInfo[21][10]=0;
+	secInfo[21][11]=0;
+	secInfo[21][12]=0;
+	secInfo[21][13]=0;
+	secInfo[21][14]=0;
+	secInfo[22] = new Array(15);
+	secInfo[22][0]="11";
+	secInfo[22][1]="68";
+	secInfo[22][2]="一般客戶";
+	secInfo[22][3]="工商銀行(亞洲)";
+	secInfo[22][4]="工銀";
+	secInfo[22][5]=0.002;
+	secInfo[22][6]=88;
+	secInfo[22][7]=0.000020;
+	secInfo[22][8]=2;
+	secInfo[22][9]=100;
+	secInfo[22][10]=0;
+	secInfo[22][11]=0;
+	secInfo[22][12]=0;
+	secInfo[22][13]=0;
+	secInfo[22][14]=0;
+	secInfo[23] = new Array(15);
+	secInfo[23][0]="12";
+	secInfo[23][1]="12";
+	secInfo[23][2]="網上/自動電話";
+	secInfo[23][3]="星展銀行";
+	secInfo[23][4]="DBS";
+	secInfo[23][5]=0.0025;
+	secInfo[23][6]=100;
+	secInfo[23][7]=0.000020;
+	secInfo[23][8]=2;
+	secInfo[23][9]=100;
+	secInfo[23][10]=8;
+	secInfo[23][11]=30;
+	secInfo[23][12]=400;
+	secInfo[23][13]=6;
+	secInfo[23][14]=6;
+	secInfo[24] = new Array(15);
+	secInfo[24][0]="12";
+	secInfo[24][1]="49";
+	secInfo[24][2]="豐盛理財";
+	secInfo[24][3]="星展銀行";
+	secInfo[24][4]="DBS";
+	secInfo[24][5]=0.0025;
+	secInfo[24][6]=0;
+	secInfo[24][7]=0.000020;
+	secInfo[24][8]=2;
+	secInfo[24][9]=100;
+	secInfo[24][10]=5;
+	secInfo[24][11]=30;
+	secInfo[24][12]=180;
+	secInfo[24][13]=6;
+	secInfo[24][14]=6;
+	secInfo[25] = new Array(15);
+	secInfo[25][0]="12";
+	secInfo[25][1]="50";
+	secInfo[25][2]="專人接聽交易";
+	secInfo[25][3]="星展銀行";
+	secInfo[25][4]="DBS";
+	secInfo[25][5]=0.005;
+	secInfo[25][6]=100;
+	secInfo[25][7]=0.000020;
+	secInfo[25][8]=2;
+	secInfo[25][9]=100;
+	secInfo[25][10]=8;
+	secInfo[25][11]=30;
+	secInfo[25][12]=400;
+	secInfo[25][13]=6;
+	secInfo[25][14]=6;
+	secInfo[26] = new Array(15);
+	secInfo[26][0]="13";
+	secInfo[26][1]="13";
+	secInfo[26][2]="網上交易";
+	secInfo[26][3]="周生生證券";
+	secInfo[26][4]="周生生";
+	secInfo[26][5]=0.00138;
+	secInfo[26][6]=80;
+	secInfo[26][7]=0.000020;
+	secInfo[26][8]=3;
+	secInfo[26][9]=999999;
+	secInfo[26][10]=0;
+	secInfo[26][11]=0;
+	secInfo[26][12]=0;
+	secInfo[26][13]=2;
+	secInfo[26][14]=2;
+	secInfo[27] = new Array(15);
+	secInfo[27][0]="14";
+	secInfo[27][1]="14";
+	secInfo[27][2]="網上交易";
+	secInfo[27][3]="耀才證券";
+	secInfo[27][4]="耀才";
+	secInfo[27][5]=0.000668;
+	secInfo[27][6]=50;
+	secInfo[27][7]=0.000060;
+	secInfo[27][8]=5;
+	secInfo[27][9]=200;
+	secInfo[27][10]=0;
+	secInfo[27][11]=0;
+	secInfo[27][12]=0;
+	secInfo[27][13]=0;
+	secInfo[27][14]=0;
+	secInfo[28] = new Array(15);
+	secInfo[28][0]="15";
+	secInfo[28][1]="15";
+	secInfo[28][2]="網上交易";
+	secInfo[28][3]="輝立證券";
+	secInfo[28][4]="輝立";
+	secInfo[28][5]=0.0025;
+	secInfo[28][6]=100;
+	secInfo[28][7]=0.000100;
+	secInfo[28][8]=3;
+	secInfo[28][9]=300;
+	secInfo[28][10]=0;
+	secInfo[28][11]=0;
+	secInfo[28][12]=0;
+	secInfo[28][13]=0;
+	secInfo[28][14]=0;
+	secInfo[29] = new Array(15);
+	secInfo[29][0]="16";
+	secInfo[29][1]="16";
+	secInfo[29][2]="網上交易";
+	secInfo[29][3]="致富證券";
+	secInfo[29][4]="致富";
+	secInfo[29][5]=0.000675;
+	secInfo[29][6]=38;
+	secInfo[29][7]=0.000040;
+	secInfo[29][8]=5;
+	secInfo[29][9]=999999;
+	secInfo[29][10]=0;
+	secInfo[29][11]=0;
+	secInfo[29][12]=0;
+	secInfo[29][13]=0;
+	secInfo[29][14]=0;
+	secInfo[30] = new Array(15);
+	secInfo[30][0]="16";
+	secInfo[30][1]="52";
+	secInfo[30][2]="即日交易";
+	secInfo[30][3]="致富證券";
+	secInfo[30][4]="致富";
+	secInfo[30][5]=0.000875;
+	secInfo[30][6]=50;
+	secInfo[30][7]=0.000040;
+	secInfo[30][8]=5;
+	secInfo[30][9]=999999;
+	secInfo[30][10]=0;
+	secInfo[30][11]=0;
+	secInfo[30][12]=0;
+	secInfo[30][13]=0;
+	secInfo[30][14]=0;
+	secInfo[31] = new Array(15);
+	secInfo[31][0]="16";
+	secInfo[31][1]="53";
+	secInfo[31][2]="普通交易";
+	secInfo[31][3]="致富證券";
+	secInfo[31][4]="致富";
+	secInfo[31][5]=0.00125;
+	secInfo[31][6]=50;
+	secInfo[31][7]=0.000040;
+	secInfo[31][8]=5;
+	secInfo[31][9]=999999;
+	secInfo[31][10]=0;
+	secInfo[31][11]=0;
+	secInfo[31][12]=0;
+	secInfo[31][13]=0;
+	secInfo[31][14]=0;
+	secInfo[32] = new Array(15);
+	secInfo[32][0]="17";
+	secInfo[32][1]="17";
+	secInfo[32][2]="網上交易";
+	secInfo[32][3]="海通國際";
+	secInfo[32][4]="海通";
+	secInfo[32][5]=0.0015;
+	secInfo[32][6]=100;
+	secInfo[32][7]=0.000020;
+	secInfo[32][8]=2;
+	secInfo[32][9]=100;
+	secInfo[32][10]=0;
+	secInfo[32][11]=0;
+	secInfo[32][12]=0;
+	secInfo[32][13]=0;
+	secInfo[32][14]=0;
+	secInfo[33] = new Array(15);
+	secInfo[33][0]="18";
+	secInfo[33][1]="18";
+	secInfo[33][2]="網上交易";
+	secInfo[33][3]="信誠證券";
+	secInfo[33][4]="信誠";
+	secInfo[33][5]=0.0015;
+	secInfo[33][6]=75;
+	secInfo[33][7]=0.000100;
+	secInfo[33][8]=3;
+	secInfo[33][9]=300;
+	secInfo[33][10]=0;
+	secInfo[33][11]=0;
+	secInfo[33][12]=0;
+	secInfo[33][13]=0;
+	secInfo[33][14]=0;
+	secInfo[34] = new Array(15);
+	secInfo[34][0]="19";
+	secInfo[34][1]="19";
+	secInfo[34][2]="網上交易";
+	secInfo[34][3]="新富證券";
+	secInfo[34][4]="新富";
+	secInfo[34][5]=0.0015;
+	secInfo[34][6]=80;
+	secInfo[34][7]=0.000020;
+	secInfo[34][8]=2.5;
+	secInfo[34][9]=999999;
+	secInfo[34][10]=0;
+	secInfo[34][11]=0;
+	secInfo[34][12]=0;
+	secInfo[34][13]=0;
+	secInfo[34][14]=0;
+	secInfo[35] = new Array(15);
+	secInfo[35][0]="20";
+	secInfo[35][1]="20";
+	secInfo[35][2]="網上交易";
+	secInfo[35][3]="新鴻基證券";
+	secInfo[35][4]="新鴻基";
+	secInfo[35][5]=0.00138;
+	secInfo[35][6]=88;
+	secInfo[35][7]=0.000020;
+	secInfo[35][8]=2;
+	secInfo[35][9]=200;
+	secInfo[35][10]=0;
+	secInfo[35][11]=0;
+	secInfo[35][12]=0;
+	secInfo[35][13]=0;
+	secInfo[35][14]=0;
+	secInfo[36] = new Array(15);
+	secInfo[36][0]="21";
+	secInfo[36][1]="21";
+	secInfo[36][2]="網上交易";
+	secInfo[36][3]="永隆銀行";
+	secInfo[36][4]="永隆";
+	secInfo[36][5]=0.0025;
+	secInfo[36][6]=100;
+	secInfo[36][7]=0.000020;
+	secInfo[36][8]=2;
+	secInfo[36][9]=100;
+	secInfo[36][10]=0;
+	secInfo[36][11]=0;
+	secInfo[36][12]=0;
+	secInfo[36][13]=0;
+	secInfo[36][14]=0;
+	secInfo[37] = new Array(15);
+	secInfo[37][0]="22";
+	secInfo[37][1]="22";
+	secInfo[37][2]="網上交易";
+	secInfo[37][3]="招商證券";
+	secInfo[37][4]="招商";
+	secInfo[37][5]=0.0025;
+	secInfo[37][6]=100;
+	secInfo[37][7]=0.000000;
+	secInfo[37][8]=0;
+	secInfo[37][9]=0;
+	secInfo[37][10]=0;
+	secInfo[37][11]=0;
+	secInfo[37][12]=0;
+	secInfo[37][13]=0;
+	secInfo[37][14]=0;
+	secInfo[38] = new Array(15);
+	secInfo[38][0]="23";
+	secInfo[38][1]="23";
+	secInfo[38][2]="網上交易";
+	secInfo[38][3]="交銀國際控股";
+	secInfo[38][4]="交控";
+	secInfo[38][5]=0.0025;
+	secInfo[38][6]=100;
+	secInfo[38][7]=0.000000;
+	secInfo[38][8]=0;
+	secInfo[38][9]=999999;
+	secInfo[38][10]=0;
+	secInfo[38][11]=0;
+	secInfo[38][12]=999999;
+	secInfo[38][13]=0;
+	secInfo[38][14]=0;
+	secInfo[39] = new Array(15);
+	secInfo[39][0]="24";
+	secInfo[39][1]="24";
+	secInfo[39][2]="電子交易戶口";
+	secInfo[39][3]="國浩資本";
+	secInfo[39][4]="國浩";
+	secInfo[39][5]=0.0015;
+	secInfo[39][6]=50;
+	secInfo[39][7]=0.000020;
+	secInfo[39][8]=3;
+	secInfo[39][9]=100;
+	secInfo[39][10]=0;
+	secInfo[39][11]=0;
+	secInfo[39][12]=0;
+	secInfo[39][13]=0;
+	secInfo[39][14]=0;
+	secInfo[40] = new Array(15);
+	secInfo[40][0]="24";
+	secInfo[40][1]="46";
+	secInfo[40][2]="託存戶口";
+	secInfo[40][3]="國浩資本";
+	secInfo[40][4]="國浩";
+	secInfo[40][5]=0.0025;
+	secInfo[40][6]=100;
+	secInfo[40][7]=0.000020;
+	secInfo[40][8]=3;
+	secInfo[40][9]=100;
+	secInfo[40][10]=0;
+	secInfo[40][11]=0;
+	secInfo[40][12]=0;
+	secInfo[40][13]=0;
+	secInfo[40][14]=0;
+	secInfo[41] = new Array(15);
+	secInfo[41][0]="25";
+	secInfo[41][1]="25";
+	secInfo[41][2]="網上交易";
+	secInfo[41][3]="南華證券";
+	secInfo[41][4]="南華";
+	secInfo[41][5]=0.00125;
+	secInfo[41][6]=50;
+	secInfo[41][7]=0.000020;
+	secInfo[41][8]=2;
+	secInfo[41][9]=100;
+	secInfo[41][10]=0;
+	secInfo[41][11]=0;
+	secInfo[41][12]=0;
+	secInfo[41][13]=0;
+	secInfo[41][14]=0;
+	secInfo[42] = new Array(15);
+	secInfo[42][0]="26";
+	secInfo[42][1]="26";
+	secInfo[42][2]="網上交易";
+	secInfo[42][3]="寶盛證券";
+	secInfo[42][4]="寶盛";
+	secInfo[42][5]=0.0018;
+	secInfo[42][6]=88;
+	secInfo[42][7]=0.000100;
+	secInfo[42][8]=3;
+	secInfo[42][9]=999999;
+	secInfo[42][10]=0;
+	secInfo[42][11]=0;
+	secInfo[42][12]=0;
+	secInfo[42][13]=0;
+	secInfo[42][14]=0;
+	secInfo[43] = new Array(15);
+	secInfo[43][0]="27";
+	secInfo[43][1]="27";
+	secInfo[43][2]="一般客戶";
+	secInfo[43][3]="建設銀行(亞洲)";
+	secInfo[43][4]="建銀";
+	secInfo[43][5]=0.0018;
+	secInfo[43][6]=100;
+	secInfo[43][7]=0.000000;
+	secInfo[43][8]=0;
+	secInfo[43][9]=0;
+	secInfo[43][10]=5;
+	secInfo[43][11]=30;
+	secInfo[43][12]=500;
+	secInfo[43][13]=0;
+	secInfo[43][14]=0;
+	secInfo[44] = new Array(15);
+	secInfo[44][0]="27";
+	secInfo[44][1]="63";
+	secInfo[44][2]="貴賓晉裕";
+	secInfo[44][3]="建設銀行(亞洲)";
+	secInfo[44][4]="建銀";
+	secInfo[44][5]=0.0018;
+	secInfo[44][6]=100;
+	secInfo[44][7]=0.000000;
+	secInfo[44][8]=0;
+	secInfo[44][9]=0;
+	secInfo[44][10]=5;
+	secInfo[44][11]=30;
+	secInfo[44][12]=500;
+	secInfo[44][13]=0;
+	secInfo[44][14]=0;
+	secInfo[45] = new Array(15);
+	secInfo[45][0]="28";
+	secInfo[45][1]="28";
+	secInfo[45][2]="CITICfirst客戶";
+	secInfo[45][3]="中信嘉華銀行";
+	secInfo[45][4]="中信";
+	secInfo[45][5]=0.0025;
+	secInfo[45][6]=100;
+	secInfo[45][7]=0.000000;
+	secInfo[45][8]=0;
+	secInfo[45][9]=0;
+	secInfo[45][10]=0;
+	secInfo[45][11]=0;
+	secInfo[45][12]=0;
+	secInfo[45][13]=0;
+	secInfo[45][14]=0;
+	secInfo[46] = new Array(15);
+	secInfo[46][0]="28";
+	secInfo[46][1]="44";
+	secInfo[46][2]="劃時理財客戶";
+	secInfo[46][3]="中信嘉華銀行";
+	secInfo[46][4]="中信";
+	secInfo[46][5]=0.00125;
+	secInfo[46][6]=100;
+	secInfo[46][7]=0.000000;
+	secInfo[46][8]=0;
+	secInfo[46][9]=0;
+	secInfo[46][10]=0;
+	secInfo[46][11]=0;
+	secInfo[46][12]=0;
+	secInfo[46][13]=0;
+	secInfo[46][14]=0;
+	secInfo[47] = new Array(15);
+	secInfo[47][0]="29";
+	secInfo[47][1]="29";
+	secInfo[47][2]="網上交易";
+	secInfo[47][3]="渣打銀行";
+	secInfo[47][4]="渣打";
+	secInfo[47][5]=0.002;
+	secInfo[47][6]=0;
+	secInfo[47][7]=0.000020;
+	secInfo[47][8]=2;
+	secInfo[47][9]=100;
+	secInfo[47][10]=0;
+	secInfo[47][11]=0;
+	secInfo[47][12]=0;
+	secInfo[47][13]=0;
+	secInfo[47][14]=0;
+	secInfo[48] = new Array(15);
+	secInfo[48][0]="29";
+	secInfo[48][1]="47";
+	secInfo[48][2]="電話交易";
+	secInfo[48][3]="渣打銀行";
+	secInfo[48][4]="渣打";
+	secInfo[48][5]=0.003;
+	secInfo[48][6]=0;
+	secInfo[48][7]=0.000020;
+	secInfo[48][8]=2;
+	secInfo[48][9]=100;
+	secInfo[48][10]=0;
+	secInfo[48][11]=0;
+	secInfo[48][12]=0;
+	secInfo[48][13]=0;
+	secInfo[48][14]=0;
+	secInfo[49] = new Array(15);
+	secInfo[49][0]="30";
+	secInfo[49][1]="30";
+	secInfo[49][2]="網上交易";
+	secInfo[49][3]="時富證券";
+	secInfo[49][4]="時富";
+	secInfo[49][5]=0.0025;
+	secInfo[49][6]=100;
+	secInfo[49][7]=0.000020;
+	secInfo[49][8]=2;
+	secInfo[49][9]=100;
+	secInfo[49][10]=0;
+	secInfo[49][11]=0;
+	secInfo[49][12]=0;
+	secInfo[49][13]=0;
+	secInfo[49][14]=0;
+	secInfo[50] = new Array(15);
+	secInfo[50][0]="31";
+	secInfo[50][1]="31";
+	secInfo[50][2]="網上交易";
+	secInfo[50][3]="一通投資者";
+	secInfo[50][4]="一通";
+	secInfo[50][5]=0;
+	secInfo[50][6]=5;
+	secInfo[50][7]=0.000020;
+	secInfo[50][8]=2;
+	secInfo[50][9]=100;
+	secInfo[50][10]=0;
+	secInfo[50][11]=0;
+	secInfo[50][12]=0;
+	secInfo[50][13]=0.5;
+	secInfo[50][14]=0.5;
+	secInfo[51] = new Array(15);
+	secInfo[51][0]="32";
+	secInfo[51][1]="32";
+	secInfo[51][2]="網上交易";
+	secInfo[51][3]="凱基證券";
+	secInfo[51][4]="凱基";
+	secInfo[51][5]=0.0025;
+	secInfo[51][6]=100;
+	secInfo[51][7]=0.000020;
+	secInfo[51][8]=2;
+	secInfo[51][9]=100;
+	secInfo[51][10]=0;
+	secInfo[51][11]=0;
+	secInfo[51][12]=0;
+	secInfo[51][13]=0;
+	secInfo[51][14]=0;
+	secInfo[52] = new Array(15);
+	secInfo[52][0]="33";
+	secInfo[52][1]="33";
+	secInfo[52][2]="網上交易";
+	secInfo[52][3]="匯訊數碼";
+	secInfo[52][4]="匯訊";
+	secInfo[52][5]=0.0005;
+	secInfo[52][6]=50;
+	secInfo[52][7]=0.000050;
+	secInfo[52][8]=5;
+	secInfo[52][9]=1e+07;
+	secInfo[52][10]=0;
+	secInfo[52][11]=0;
+	secInfo[52][12]=0;
+	secInfo[52][13]=0;
+	secInfo[52][14]=0;
+	secInfo[53] = new Array(15);
+	secInfo[53][0]="34";
+	secInfo[53][1]="34";
+	secInfo[53][2]="網上交易";
+	secInfo[53][3]="勝利證券";
+	secInfo[53][4]="勝利";
+	secInfo[53][5]=0.0025;
+	secInfo[53][6]=100;
+	secInfo[53][7]=0.000000;
+	secInfo[53][8]=0;
+	secInfo[53][9]=0;
+	secInfo[53][10]=2;
+	secInfo[53][11]=20;
+	secInfo[53][12]=1e+08;
+	secInfo[53][13]=0;
+	secInfo[53][14]=0;
+	secInfo[54] = new Array(15);
+	secInfo[54][0]="35";
+	secInfo[54][1]="35";
+	secInfo[54][2]="網上交易";
+	secInfo[54][3]="泓福證券";
+	secInfo[54][4]="泓福";
+	secInfo[54][5]=0.0025;
+	secInfo[54][6]=80;
+	secInfo[54][7]=0.000000;
+	secInfo[54][8]=0;
+	secInfo[54][9]=0;
+	secInfo[54][10]=5;
+	secInfo[54][11]=0;
+	secInfo[54][12]=999999;
+	secInfo[54][13]=0;
+	secInfo[54][14]=20;
+	secInfo[55] = new Array(15);
+	secInfo[55][0]="36";
+	secInfo[55][1]="36";
+	secInfo[55][2]="網上交易";
+	secInfo[55][3]="電訊數碼證券";
+	secInfo[55][4]="電訊數碼";
+	secInfo[55][5]=0.0005;
+	secInfo[55][6]=25;
+	secInfo[55][7]=0.000020;
+	secInfo[55][8]=3;
+	secInfo[55][9]=100;
+	secInfo[55][10]=0;
+	secInfo[55][11]=0;
+	secInfo[55][12]=0;
+	secInfo[55][13]=0;
+	secInfo[55][14]=0;
+	secInfo[56] = new Array(15);
+	secInfo[56][0]="37";
+	secInfo[56][1]="37";
+	secInfo[56][2]="網上交易";
+	secInfo[56][3]="百裕證券";
+	secInfo[56][4]="百裕";
+	secInfo[56][5]=0.0005;
+	secInfo[56][6]=50;
+	secInfo[56][7]=0.000150;
+	secInfo[56][8]=10;
+	secInfo[56][9]=1e+08;
+	secInfo[56][10]=0;
+	secInfo[56][11]=0;
+	secInfo[56][12]=0;
+	secInfo[56][13]=0;
+	secInfo[56][14]=0;
+	secInfo[57] = new Array(15);
+	secInfo[57][0]="38";
+	secInfo[57][1]="40";
+	secInfo[57][2]="網上銀行";
+	secInfo[57][3]="集友銀行";
+	secInfo[57][4]="集友";
+	secInfo[57][5]=0.0025;
+	secInfo[57][6]=100;
+	secInfo[57][7]=0.000000;
+	secInfo[57][8]=0;
+	secInfo[57][9]=0;
+	secInfo[57][10]=2.5;
+	secInfo[57][11]=30;
+	secInfo[57][12]=200;
+	secInfo[57][13]=0;
+	secInfo[57][14]=0;
+	secInfo[58] = new Array(15);
+	secInfo[58][0]="38";
+	secInfo[58][1]="41";
+	secInfo[58][2]="專人電話／櫃位";
+	secInfo[58][3]="集友銀行";
+	secInfo[58][4]="集友";
+	secInfo[58][5]=0.005;
+	secInfo[58][6]=100;
+	secInfo[58][7]=0.000000;
+	secInfo[58][8]=0;
+	secInfo[58][9]=0;
+	secInfo[58][10]=2.5;
+	secInfo[58][11]=30;
+	secInfo[58][12]=100;
+	secInfo[58][13]=0;
+	secInfo[58][14]=0;
+	secInfo[59] = new Array(15);
+	secInfo[59][0]="39";
+	secInfo[59][1]="42";
+	secInfo[59][2]="網上銀行";
+	secInfo[59][3]="億創理財";
+	secInfo[59][4]="億創";
+	secInfo[59][5]=0.001;
+	secInfo[59][6]=78;
+	secInfo[59][7]=0.000000;
+	secInfo[59][8]=0;
+	secInfo[59][9]=0;
+	secInfo[59][10]=0;
+	secInfo[59][11]=0;
+	secInfo[59][12]=0;
+	secInfo[59][13]=0;
+	secInfo[59][14]=0;
+	secInfo[60] = new Array(15);
+	secInfo[60][0]="40";
+	secInfo[60][1]="45";
+	secInfo[60][2]="網上證券買賣";
+	secInfo[60][3]="京華山一證券";
+	secInfo[60][4]="京華";
+	secInfo[60][5]=0.0025;
+	secInfo[60][6]=100;
+	secInfo[60][7]=0.000020;
+	secInfo[60][8]=2;
+	secInfo[60][9]=100;
+	secInfo[60][10]=0;
+	secInfo[60][11]=0;
+	secInfo[60][12]=0;
+	secInfo[60][13]=0;
+	secInfo[60][14]=0;
+	secInfo[61] = new Array(15);
+	secInfo[61][0]="41";
+	secInfo[61][1]="48";
+	secInfo[61][2]="網上交易";
+	secInfo[61][3]="中信証券國際";
+	secInfo[61][4]="中証";
+	secInfo[61][5]=0.0025;
+	secInfo[61][6]=100;
+	secInfo[61][7]=0.000000;
+	secInfo[61][8]=0;
+	secInfo[61][9]=0;
+	secInfo[61][10]=0;
+	secInfo[61][11]=0;
+	secInfo[61][12]=0;
+	secInfo[61][13]=5;
+	secInfo[61][14]=5;
+	secInfo[62] = new Array(15);
+	secInfo[62][0]="42";
+	secInfo[62][1]="56";
+	secInfo[62][2]="網上/自動電話";
+	secInfo[62][3]="大新銀行";
+	secInfo[62][4]="大新";
+	secInfo[62][5]=0.0025;
+	secInfo[62][6]=100;
+	secInfo[62][7]=0.000000;
+	secInfo[62][8]=0;
+	secInfo[62][9]=0;
+	secInfo[62][10]=5;
+	secInfo[62][11]=30;
+	secInfo[62][12]=150;
+	secInfo[62][13]=0;
+	secInfo[62][14]=0;
+	secInfo[63] = new Array(15);
+	secInfo[63][0]="42";
+	secInfo[63][1]="57";
+	secInfo[63][2]="私人銀行";
+	secInfo[63][3]="大新銀行";
+	secInfo[63][4]="大新";
+	secInfo[63][5]=0.004;
+	secInfo[63][6]=300;
+	secInfo[63][7]=0.000000;
+	secInfo[63][8]=0;
+	secInfo[63][9]=0;
+	secInfo[63][10]=5;
+	secInfo[63][11]=30;
+	secInfo[63][12]=150;
+	secInfo[63][13]=0;
+	secInfo[63][14]=0;
+	secInfo[64] = new Array(15);
+	secInfo[64][0]="43";
+	secInfo[64][1]="64";
+	secInfo[64][2]="網上交易";
+	secInfo[64][3]="康宏証券";
+	secInfo[64][4]="康宏";
+	secInfo[64][5]=0.0016;
+	secInfo[64][6]=70;
+	secInfo[64][7]=0.000020;
+	secInfo[64][8]=2;
+	secInfo[64][9]=100;
+	secInfo[64][10]=0;
+	secInfo[64][11]=0;
+	secInfo[64][12]=0;
+	secInfo[64][13]=0;
+	secInfo[64][14]=0;
+	secInfo[65] = new Array(15);
+	secInfo[65][0]="43";
+	secInfo[65][1]="65";
+	secInfo[65][2]="電話落盤";
+	secInfo[65][3]="康宏証券";
+	secInfo[65][4]="康宏";
+	secInfo[65][5]=0.0025;
+	secInfo[65][6]=100;
+	secInfo[65][7]=0.000020;
+	secInfo[65][8]=2;
+	secInfo[65][9]=100;
+	secInfo[65][10]=0;
+	secInfo[65][11]=0;
+	secInfo[65][12]=0;
+	secInfo[65][13]=0;
+	secInfo[65][14]=0;
+	secInfo[66] = new Array(15);
+	secInfo[66][0]="44";
+	secInfo[66][1]="66";
+	secInfo[66][2]="網上/自動電話";
+	secInfo[66][3]="南洋商業銀行";
+	secInfo[66][4]="南洋";
+	secInfo[66][5]=0.0025;
+	secInfo[66][6]=100;
+	secInfo[66][7]=0.000000;
+	secInfo[66][8]=0;
+	secInfo[66][9]=999999;
+	secInfo[66][10]=2.5;
+	secInfo[66][11]=30;
+	secInfo[66][12]=200;
+	secInfo[66][13]=0;
+	secInfo[66][14]=0;
+	secInfo[67] = new Array(15);
+	secInfo[67][0]="44";
+	secInfo[67][1]="67";
+	secInfo[67][2]="專人接聽交易";
+	secInfo[67][3]="南洋商業銀行";
+	secInfo[67][4]="南洋";
+	secInfo[67][5]=0.005;
+	secInfo[67][6]=100;
+	secInfo[67][7]=0.000000;
+	secInfo[67][8]=0;
+	secInfo[67][9]=0;
+	secInfo[67][10]=5;
+	secInfo[67][11]=30;
+	secInfo[67][12]=200;
+	secInfo[67][13]=0;
+	secInfo[67][14]=0;
+	secInfo[68] = new Array(15);
+	secInfo[68][0]="45";
+	secInfo[68][1]="69";
+	secInfo[68][2]="精明投資賬戶";
+	secInfo[68][3]="金道投資";
+	secInfo[68][4]="金道";
+	secInfo[68][5]=0;
+	secInfo[68][6]=4.99;
+	secInfo[68][7]=0.000020;
+	secInfo[68][8]=2;
+	secInfo[68][9]=100;
+	secInfo[68][10]=0;
+	secInfo[68][11]=0;
+	secInfo[68][12]=0;
+	secInfo[68][13]=0.5;
+	secInfo[68][14]=0.5;
+	secInfo[69] = new Array(15);
+	secInfo[69][0]="45";
+	secInfo[69][1]="70";
+	secInfo[69][2]="電話交易";
+	secInfo[69][3]="金道投資";
+	secInfo[69][4]="金道";
+	secInfo[69][5]=0;
+	secInfo[69][6]=50;
+	secInfo[69][7]=0.000020;
+	secInfo[69][8]=2;
+	secInfo[69][9]=100;
+	secInfo[69][10]=0;
+	secInfo[69][11]=0;
+	secInfo[69][12]=0;
+	secInfo[69][13]=0.5;
+	secInfo[69][14]=0.5;
+	return secInfo;
+}
+</script>
+<body><br/>
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td><table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="40%" align="center" valign="top"><table width="388" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="262" valign="top" style="border-width:1px 0px 1px 1px; border-style:solid; border-color:#6699FF; padding:2px 0px 2px 5px;"><table width="240" border="0" cellpadding="0" cellspacing="0">
+              <tr>
+                <td width="25"><img src="images/btnLeft.png" alt="上一個" width="25" height="30" style="cursor:pointer" onclick="prev_rdSubSec(); this.blur(); selectText();" /></td>
+                <td width="190" align="center"><select name="slSec" id="slSec" onchange="change_rdSubSec(this.value); setDeposit(); showResult(inputMode); showSecInfo(); this.blur(); selectText();">
+                  <option value="1" class="class_slSec_1">
+                    匯豐銀行                      </option>
+                  <option value="2" class="class_slSec_1" >
+                    恒生銀行                      </option>
+                  <option value="3" class="class_slSec_1" >
+                    中國銀行(香港)                      </option>
+                  <option value="5" class="class_slSec_1" >
+                    交通銀行                      </option>
+                  <option value="6" class="class_slSec_1" >
+                    永亨銀行                      </option>
+                  <option value="7" class="class_slSec_1" >
+                    創興銀行                      </option>
+                  <option value="8" class="class_slSec_1" >
+                    花旗銀行                      </option>
+                  <option value="9" class="class_slSec_1" >
+                    富邦銀行                      </option>
+                  <option value="10" selected="selected" class="class_slSec_1" >
+                    上海商業銀行                      </option>
+                  <option value="11" class="class_slSec_1" >
+                    工商銀行(亞洲)                      </option>
+                  <option value="12" class="class_slSec_1" >
+                    星展銀行                      </option>
+                  <option value="21" class="class_slSec_1" >
+                    永隆銀行                      </option>
+                  <option value="27" class="class_slSec_1" >
+                    建設銀行(亞洲)                      </option>
+                  <option value="28" class="class_slSec_1" >
+                    中信嘉華銀行                      </option>
+                  <option value="29" class="class_slSec_1" >
+                    渣打銀行                      </option>
+                  <option value="38" class="class_slSec_1" >
+                    集友銀行                      </option>
+                  <option value="42" class="class_slSec_1" >
+                    大新銀行                      </option>
+                  <option value="44" class="class_slSec_1" >
+                    南洋商業銀行                      </option>
+                  <option value="4" class="class_slSec_2" >
+                    東亞證券                      </option>
+                  <option value="13" class="class_slSec_2" >
+                    周生生證券                      </option>
+                  <option value="14" class="class_slSec_2" >
+                    耀才證券                      </option>
+                  <option value="15" class="class_slSec_2" >
+                    輝立證券                      </option>
+                  <option value="16" class="class_slSec_2" >
+                    致富證券                      </option>
+                  <option value="17" class="class_slSec_2" >
+                    海通國際                      </option>
+                  <option value="18" class="class_slSec_2" >
+                    信誠證券                      </option>
+                  <option value="19" class="class_slSec_2" >
+                    新富證券                      </option>
+                  <option value="20" class="class_slSec_2" >
+                    新鴻基證券                      </option>
+                  <option value="22" class="class_slSec_2" >
+                    招商證券                      </option>
+                  <option value="23" class="class_slSec_2" >
+                    交銀國際控股                      </option>
+                  <option value="24" class="class_slSec_2" >
+                    國浩資本                      </option>
+                  <option value="25" class="class_slSec_2" >
+                    南華證券                      </option>
+                  <option value="26" class="class_slSec_2" >
+                    寶盛證券                      </option>
+                  <option value="30" class="class_slSec_2" >
+                    時富證券                      </option>
+                  <option value="31" class="class_slSec_2" >
+                    一通投資者                      </option>
+                  <option value="32" class="class_slSec_2" >
+                    凱基證券                      </option>
+                  <option value="33" class="class_slSec_2" >
+                    匯訊數碼                      </option>
+                  <option value="34" class="class_slSec_2" >
+                    勝利證券                      </option>
+                  <option value="35" class="class_slSec_2" >
+                    泓福證券                      </option>
+                  <option value="36" class="class_slSec_2" >
+                    電訊數碼證券                      </option>
+                  <option value="37" class="class_slSec_2" >
+                    百裕證券                      </option>
+                  <option value="39" class="class_slSec_2" >
+                    億創理財                      </option>
+                  <option value="40" class="class_slSec_2" >
+                    京華山一證券                      </option>
+                  <option value="41" class="class_slSec_2" >
+                    中信証券國際                      </option>
+                  <option value="43" class="class_slSec_2" >
+                    康宏証券                      </option>
+                  <option value="45" class="class_slSec_2" >
+                    金道投資                      </option>
+                  </select>                  </td>
+                <td width="25"><img src="images/btnRight.png" alt="下一個" width="25" height="30" style="cursor:pointer" onclick="next_rdSubSec(); this.blur(); selectText();" /></td>
+                </tr>
+              </table></td>
+            <td width="228" rowspan="2" valign="top" style="border-width:1px 1px 1px 0px; border-style:solid; border-color:#6699FF; padding:2px 0px 2px 0px;"><table width="100%" border="0" align="center">
+              <tr>
+                <td width="20" height="19" align="center"><input type="radio" name="rdSubSec" id="rdSubSec1" onclick="setDeposit(); showResult(inputMode); showSecInfo();selectText();" value="" onfocus="this.blur();" checked /></td>
+                <td width="105"><span id="lblSubSec1">&nbsp;</span></td>
+                </tr>
+              <tr>
+                <td height="19" align="center"><input type="radio" name="rdSubSec" id="rdSubSec2" onclick="setDeposit(); showResult(inputMode); showSecInfo(); selectText();" onfocus="this.blur();" value="" /></td>
+                <td><span id="lblSubSec2">&nbsp;</span></td>
+                </tr>
+              <tr>
+                <td height="19" align="center"><input type="radio" name="rdSubSec" id="rdSubSec3" onclick="setDeposit(); showResult(inputMode); showSecInfo(); selectText();" onfocus="this.blur();" value="" /></td>
+                <td><span id="lblSubSec3">&nbsp;</span><input type="hidden" id="hdTTID" name="hdTTID" />
+                  <input type="hidden" id="hdStockCode" name="hdStockCode" />
+                  <input type="hidden" id="hdComment" name="hdComment" /></td>
+                </tr>
+              </table></td>
+            </tr>
+          <tr>
+            <td height="30" align="left" valign="middle" style="border-width:0px 1px 0px 0px; border-style:solid; border-color:#6699FF;"><table width="99%" border="0" cellspacing="1" cellpadding="2">
+              <tr>
+                <td width="22%" height="28" align="center" class="sc_normal" onmouseover="this.className='sc_active'" onmouseout="this.className='sc_normal'"  onclick="sm('divNoteSC',350,230);">捷徑1</td>
+                <td width="22%" align="center" class="sc_normal" onmouseover="this.className='sc_active'" onmouseout="this.className='sc_normal'"  onclick="sm('divNoteSC',350,230);">捷徑2</td>
+                <td width="22%" align="center" class="sc_normal" onmouseover="this.className='sc_active'" onmouseout="this.className='sc_normal'"  onclick="sm('divNoteSC',350,230);">捷徑3</td>
+                <td width="34%" align="center" onmouseover="this.className='changeModeButton_active'" onmouseout="this.className='changeModeButton_normal'" onclick="changeInputMode();selectText();" class="changeModeButton_normal"><img src="images/exchange.png" width="20" height="20" align="absmiddle" /> 轉換模式</td>
+                </tr>
+              </table></td>
+            </tr>
+          <tr>
+            <td colspan="2" valign="top"><table width="100%" id="tbInput1" style="">
+              <tr>
+                <td width="70" align="left">買入價位</td>
+                <td width="130" align="left"><input name="buyAt" type="tel" id="buyAt" onkeyup="catchKeyPress(event)" size="4" maxlength="6" value="" tabindex="1" />
+                  <img src="images/btn_updown.png" alt="上下" name="buy_updown" width="14" height="22" border="0" align="absmiddle" usemap="#buy_updownMap" id="buy_updown" onmouseover="this.style.cursor='pointer'"  />
+                  <map name="buy_updownMap" id="buy_updownMap">
+                    <area shape="rect" coords="0,0,14,11" onmouseover="this.style.cursor='pointer'" onclick="autoIncrement(document.getElementById('buyAt'), true);" />
+                    <area shape="rect" coords="0,11,14,22" onmouseover="this.style.cursor='pointer'" onclick="autoIncrement(document.getElementById('buyAt'), false);" />
+                    </map>                  </td>
+                <td width="70" align="left">賣出價位</td>
+                <td width="130" align="left"><input name="sellAt" type="tel" id="sellAt" onkeyup="catchKeyPress(event)" size="4" maxlength="6" value=""  tabindex="2" />
+                  <img src="images/btn_updown.png" alt="上下" name="sell_updown" width="14" height="22" border="0" align="absmiddle" usemap="#sell_updownMap" id="sell_updown" onmouseover="this.style.cursor='pointer'"  />
+                  <map name="sell_updownMap" id="sell_updownMap">
+                    <area shape="rect" coords="0,0,14,11" onmouseover="this.style.cursor='pointer'" onclick="autoIncrement(document.getElementById('sellAt'), true);" />
+                    <area shape="rect" coords="0,11,14,22" onmouseover="this.style.cursor='pointer'" onclick="autoIncrement(document.getElementById('sellAt'), false);" />
+                    </map>                  
+					<span id="perInc" style="color:green;font-weight: bold;"></span>
+					</td>
+                </tr>
+              <tr>
+                <td align="left">購買股數</td>
+                <td colspan="3" align="left"><input name="lotSize" type="tel" class="font_s" id="lotSize" onkeyup="catchKeyPress(event)" size="4" maxlength="6" value="1000" tabindex="3" />
+                  &nbsp;&times;&nbsp;
+                  <input name="numHand" type="text" class="font_s" id="numHand" onkeyup="catchKeyPress(event)" size="2" maxlength="5" value="1"  tabindex="4" />
+                  <img src="images/btn_updown.png" alt="上下" name="hand_updown" width="14" height="22" border="0" align="absmiddle" usemap="#hand_updownMap" id="hand_updown" onmouseover="this.style.cursor='pointer'"  /> &nbsp;手&nbsp;= <span id="lblTotalShare">0</span> 股
+                  <map name="hand_updownMap" id="hand_updownMap">
+                    <area shape="rect" coords="0,0,14,11" onclick="autoIncrement(document.getElementById('numHand'), true);" onmouseover="this.style.cursor='pointer'" />
+                    <area shape="rect" coords="0,10,14,21" onclick="autoIncrement(document.getElementById('numHand'), false);" onmouseover="this.style.cursor='pointer'" />
+                    </map>
+                  <input type="hidden" id="hdTotalShare" name="hdTotalShare" /></td>
+                </tr>
+              <tr>
+                <td colspan="4" align="right"><input name="cbWarrant" type="checkbox" id="cbWarrant" onclick="showResult(0)" onfocus="this.blur();"  />
+                  <a href="http://hk.warrants.com/home/ch/sgdata/calculator_c2.cgi" target="_blank">窩輪／牛熊證</a>
+                  <input name="cbDeposit" type="checkbox" id="cbDeposit" onchange="showResult(0)" onfocus="this.blur();"  />
+                  <span id="lblCalDeposit">計算存倉費
+                    <input name="cbSellAtRef" type="checkbox" id="cbSellAtRef" onchange="showResult(0)" onfocus="this.blur();"  />
+                    加入參考賣出價
+                    <input name="sellAtRef" type="text" id="sellAtRef" onkeyup="showResult(0)" style="width:40px" maxlength="6" disabled="disabled" />
+                    </span></td>
+                </tr>
+              </table>
+              <table width="100%" id="tbInput2" style="display:none">
+                <tr>
+                  <td colspan="5">請先輸入股票的每手股數: <input name="lotSize2" type="text" id="lotSize2" onkeyup="catchKeyPress2(event)" onchange="showResult(1)"  style="width:50px" maxlength="6" /> 
+                    ( 例: 買賣的是匯豐， 則輸入400 )</td>
+                  </tr>
+                <tr>
+                  <td width="4%" align="left">&nbsp;</td>
+                  <td width="12%" align="left" style="color:#006600">買入價</td>
+                  <td width="36%" align="left" style="color:#006600">手數</td>
+                  <td width="12%" align="left" style="color:#CC0000">賣出價</td>
+                  <td width="36%" align="left" style="color:#CC0000">手數</td>
+                  </tr>
+                <tr>
+                  <td align="left">1</td>
+                  <td align="left"><input name="buyAt_1" type="text" id="buyAt_1" onkeyup="catchKeyPress2(event)" maxlength="6" value="" style="width: 40px" /></td>
+                  <td align="left"><input name="buyNumHand_1" type="text" class="font_s" id="buyNumHand_1" onkeyup="catchKeyPress2(event)"  maxlength="5" value="" style="width: 25px" />
+                    &rArr; <span id="lblTotalBuyShare_1">0</span> 股</td>
+                  <td align="left"><input name="sellAt_1" type="text" id="sellAt_1" onkeyup="catchKeyPress2(event)"  maxlength="6" value="" style="width: 40px" /></td>
+                  <td align="left"><input name="sellNumHand_1" type="text" class="font_s" id="sellNumHand_1" onkeyup="catchKeyPress2(event)"  maxlength="5" value="" style="width: 25px" />
+                    &rArr; <span id="lblTotalSellShare_1">0</span> 股</td>
+                  </tr>
+                <tr>
+                  <td align="left">2</td>
+                  <td align="left"><input name="buyAt_2" type="text" id="buyAt_2" onkeyup="catchKeyPress2(event)" maxlength="6" value="" style="width: 40px" /></td>
+                  <td align="left"><input name="buyNumHand_2" type="text" class="font_s" id="buyNumHand_2" onkeyup="catchKeyPress2(event)"  maxlength="5" value="" style="width: 25px" />
+                    &rArr; <span id="lblTotalBuyShare_2">0</span> 股</td>
+                  <td align="left"><input name="sellAt_2" type="text" id="sellAt_2" onkeyup="catchKeyPress2(event)"  maxlength="6" value="" style="width: 40px" /></td>
+                  <td align="left"><input name="sellNumHand_2" type="text" class="font_s" id="sellNumHand_2" onkeyup="catchKeyPress2(event)"  maxlength="5" value="" style="width: 25px" />
+                    &rArr; <span id="lblTotalSellShare_2">0</span> 股</td>
+                  </tr>
+                <tr>
+                  <td align="left">3</td>
+                  <td align="left"><input name="buyAt_3" type="text" id="buyAt_3" onkeyup="catchKeyPress2(event)" maxlength="6" value="" style="width: 40px" /></td>
+                  <td align="left"><input name="buyNumHand_3" type="text" class="font_s" id="buyNumHand_3" onkeyup="catchKeyPress2(event)"  maxlength="5" value="" style="width: 25px" />
+                    &rArr; <span id="lblTotalBuyShare_3">0</span> 股</td>
+                  <td align="left"><input name="sellAt_3" type="text" id="sellAt_3" onkeyup="catchKeyPress2(event)"  maxlength="6" value="" style="width: 40px" /></td>
+                  <td align="left"><input name="sellNumHand_3" type="text" class="font_s" id="sellNumHand_3" onkeyup="catchKeyPress2(event)"  maxlength="5" value="" style="width: 25px" />
+                    &rArr; <span id="lblTotalSellShare_3">0</span> 股</td>
+                  </tr>
+                <tr>
+                  <td align="left">4</td>
+                  <td align="left"><input name="buyAt_4" type="text" id="buyAt_4" onkeyup="catchKeyPress2(event)" maxlength="6" value="" style="width: 40px" /></td>
+                  <td align="left"><input name="buyNumHand_4" type="text" class="font_s" id="buyNumHand_4" onkeyup="catchKeyPress2(event)"  maxlength="5" value="" style="width: 25px" />
+                    &rArr; <span id="lblTotalBuyShare_4">0</span> 股</td>
+                  <td align="left"><input name="sellAt_4" type="text" id="sellAt_4" onkeyup="catchKeyPress2(event)"  maxlength="6" value="" style="width: 40px" /></td>
+                  <td align="left"><input name="sellNumHand_4" type="text" class="font_s" id="sellNumHand_4" onkeyup="catchKeyPress2(event)"  maxlength="5" value="" style="width: 25px" />
+                    &rArr; <span id="lblTotalSellShare_4">0</span> 股</td>
+                  </tr>
+                <tr>
+                  <td align="left">5</td>
+                  <td align="left"><input name="buyAt_5" type="text" id="buyAt_5" onkeyup="catchKeyPress2(event)" maxlength="6" value="" style="width: 40px" /></td>
+                  <td align="left"><input name="buyNumHand_5" type="text" class="font_s" id="buyNumHand_5" onkeyup="catchKeyPress2(event)"  maxlength="5" value="" style="width: 25px" />
+                    &rArr; <span id="lblTotalBuyShare_5">0</span> 股</td>
+                  <td align="left"><input name="sellAt_5" type="text" id="sellAt_5" onkeyup="catchKeyPress2(event)"  maxlength="6" value="" style="width: 40px" /></td>
+                  <td align="left"><input name="sellNumHand_5" type="text" class="font_s" id="sellNumHand_5" onkeyup="catchKeyPress2(event);"  maxlength="5" value="" style="width: 25px" />
+                    &rArr; <span id="lblTotalSellShare_5">0</span> 股</td>
+                  </tr>
+                <tr>
+                  <td align="left">&nbsp;</td>
+                  <td colspan="2" align="left"><span style="color:#006600">平均買入價：</span><span id="lblAvgBuy" style="background-color:#00A800; color:#FFFFFF; padding:0px 5px 0px 5px">N/A</span><input type="hidden" id="hdAvgBuy" name="hdAvgBuy" /></td>
+                  <td colspan="2" rowspan="3" align="left"><input name="cbWarrant2" type="checkbox" id="cbWarrant2" onclick="showResult(1)" onfocus="this.blur();"  />
+                    <a href="http://hk.warrants.com/home/ch/sgdata/calculator_c2.cgi" target="_blank">窩輪 / 牛熊證</a>
+                    <input name="cbDeposit2" type="checkbox" id="cbDeposit2" onchange="showResult(1)" onfocus="this.blur();"  />
+                    <span id="lblCalDeposit2">計算存倉費<br />
+                      <input name="cbSellAtRef2" type="checkbox" id="cbSellAtRef2" onchange="showResult(1)" onfocus="this.blur();"  />
+                      加入參考賣出價 <input type="text" id="sellAtRef2" onkeyup="showResult(1)" maxlength="6" style="width:40px" disabled="disabled" />
+                      </span></td>
+                  </tr>
+                <tr>
+                  <td align="right">&nbsp;</td>
+                  <td colspan="2" align="left"><span style="color:#CC0000">平均賣出價：<span id="lblAvgSell" style="background-color:#FF6666; color:#FFFFFF; padding:0px 5px 0px 5px">N/A</span></span><input type="hidden" id="hdAvgSell" name="hdAvgSell" /></td>
+                  </tr>
+                <tr>
+                  <td align="right">&nbsp;</td>
+                  <td colspan="2" align="left"><span style="color:#993300">總交易股數：</span><span id="lblTotalShare2" style="background-color:#996600; color:#FFFFFF; padding:0px 5px 0px 5px">N/A</span><input type="hidden" id="hdTotalShare2" name="hdTotalShare2" /></td>
+                  </tr>
+                </table></td>
+            </tr>
+          <tr>
+            <td colspan="2" valign="top"><table width="100%" id="tbResult1" style="">
+              <tr align="center">
+                <th colspan="2" bgcolor="#00A800">買入</th>
+                <th colspan="2" bgcolor="#FF6666">賣出</th>
+                </tr>
+              <tr>
+                <td width="20%" align="left" bgcolor="#DDFFDD">股票淨值</td>
+                <td width="30%" align="right" bgcolor="#DDFFDD"><span id="lblBuyAmt">N/A</span><input type="hidden" id="hdBuyAmount" name="hdBuyAmount" /></td>
+                <td width="20%" align="left" bgcolor="#FFD9D9">股票淨值</td>
+                <td width="30%" align="right" bgcolor="#FFD9D9"><span id="lblSellAmt">N/A</span><input type="hidden" id="hdSellAmount" name="hdSellAmount" /></td>
+                </tr>
+              <tr>
+                <td align="left" bgcolor="#DDFFDD">經紀佣金</td>
+                <td align="right" bgcolor="#DDFFDD"><span id="lblBuyComm">N/A</span></td>
+                <td align="left" bgcolor="#FFD9D9">經紀佣金</td>
+                <td align="right" bgcolor="#FFD9D9"><span id="lblSellComm">N/A</span></td>
+                </tr>
+              <tr>
+                <td align="left" bgcolor="#DDFFDD">交易所徵費</td>
+                <td align="right" bgcolor="#DDFFDD"><span id="lblBuyTLFee">N/A</span></td>
+                <td align="left" bgcolor="#FFD9D9">交易所徵費</td>
+                <td align="right" bgcolor="#FFD9D9"><span id="lblSellTLFee">N/A</span></td>
+                </tr>
+              <tr>
+                <td align="left" bgcolor="#DDFFDD">證監會徵費</td>
+                <td align="right" bgcolor="#DDFFDD"><span id="lblBuyHTFee">N/A</span></td>
+                <td align="left" bgcolor="#FFD9D9">證監會徵費</td>
+                <td align="right" bgcolor="#FFD9D9"><span id="lblSellHTFee">N/A</span></td>
+                </tr>
+              <tr>
+                <td align="left" bgcolor="#DDFFDD">印花稅</td>
+                <td align="right" bgcolor="#DDFFDD"><span id="lblBuyStamp">N/A</span></td>
+                <td align="left" bgcolor="#FFD9D9">印花稅</td>
+                <td align="right" bgcolor="#FFD9D9"><span id="lblSellStamp">N/A</span></td>
+                </tr>
+              <tr>
+                <td align="left" bgcolor="#DDFFDD">結算費</td>
+                <td align="right" bgcolor="#DDFFDD"><span id="lblBuySFee">N/A</span></td>
+                <td align="left" bgcolor="#FFD9D9">結算費</td>
+                <td align="right" bgcolor="#FFD9D9"><span id="lblSellSFee">N/A</span></td>
+                </tr>
+              <tr>
+                <td align="left" bgcolor="#DDFFDD">手續費</td>
+                <td align="right" bgcolor="#DDFFDD"><span id="lblBuyFee">N/A</span></td>
+                <td align="left" bgcolor="#FFD9D9">手續費</td>
+                <td align="right" bgcolor="#FFD9D9"><span id="lblSellFee">N/A</span></td>
+                </tr>
+              <tr>
+                <td align="left" bgcolor="#DDFFDD">存倉費</td>
+                <td align="right" bgcolor="#DDFFDD"><span id="lblBuyDFee">N/A</span></td>
+                <td align="left" bgcolor="#FFD9D9">&nbsp;</td>
+                <td align="right" bgcolor="#FFD9D9">&nbsp;</td>
+                </tr>
+              <tr>
+                <td align="left" bgcolor="#DDFFDD" style="border-top-width:1px; border-top-style:solid; border-top-color:#96D8AB">買入費用</td>
+                <td align="right" bgcolor="#DDFFDD" style="border-top-width:1px; border-top-style:solid; border-top-color:#96D8AB"><span id="lblBuyCost">N/A</span><input type="hidden" name="hdBuyCost" id="hdBuyCost" /></td>
+                <td align="left" bgcolor="#FFD9D9" style="border-top-width:1px; border-top-style:solid; border-top-color:#D7A2B8">賣出費用</td>
+                <td align="right" bgcolor="#FFD9D9" style="border-top-width:1px; border-top-style:solid; border-top-color:#D7A2B8"><span id="lblSellCost">N/A</span><input type="hidden" name="hdSellCost" id="hdSellCost" />
+                  </td>
+                </tr>
+              <tr>
+                <td align="left" bgcolor="#DDFFDD"><font color="#006600">實際支出</font></td>
+                <td align="right" bgcolor="#DDFFDD"><span id="lblRealOut">N/A</span></td>
+                <td align="left" bgcolor="#FFD9D9"><font color="#ff3300">實得收入</font></td>
+                <td align="right" bgcolor="#FFD9D9"><span id="lblRealIn">N/A</span></td>
+                </tr>
+              <tr bgcolor="#FFFFFF">
+                <td align="left" bgcolor="#EFEFEF" style="color:#666666">買賣總費</td>
+                <td align="right" bgcolor="#EFEFEF" style="color:#666666"><span id="lblTotalFee">N/A</span><input type="hidden" id="hdTotalCost" name="hdTotalCost" /></td>
+                <td colspan="2" align="left" bgcolor="#EFEFEF" style="color:#666666">( 買入費用 + 賣出費用 ）</td>
+                </tr>
+              <tr bgcolor="#FFFFFF">
+                <td align="left"><b>實際收益</b></td>
+                <td align="right"><strong><span id="lblBalance">N/A</span></strong><input type="hidden" id="hdBalence" name="hdBalence" /></td>
+                <td colspan="2" rowspan="2" align="right" valign="middle"><input type="button" id="btnAddTrans" name="btnAddTrans" class="btnAddTrans" onclick="sm('divNoteReg',350,230);" value="+ 結算表" />
+                  <input type="button" name="btnSaveChange" id="btnSaveChange" value="儲存變更" class="btnSaveChange" onclick="sm('divModTT',350,230); fetchData_divModTT(); countChar('txtA_comment_TT2','lblCommentTT2_Count', 100); document.getElementById('txtA_comment_TT2').focus(); document.getElementById('txtA_comment_TT2').value=document.getElementById('txtA_comment_TT2').value;" />                    &nbsp;&nbsp;
+                  <input type="button" id="btnAddTT" name="btnAddTT" value="+ 暫存表" class="btnAddTT" onclick="sm('divNoteReg',350,230);" />
+                  <input type="button" name="btnCancelChange" id="btnCancelChange" value="取消修改" class="btnCancelChange" onclick="	cancelMod();" /></td>
+                </tr>
+              <tr bgcolor="#FFFFFF">
+                <td align="left">&nbsp;</td>
+                <td align="right"><span id="lblBalancePersent">&nbsp;</span></td>
+                </tr>
+              </table></td>
+            </tr>
+          </table>
+          <table width="99%" id="tbResult2" style="display:none">
+            <tr align="center">
+              <th width="22%" bgcolor="#005EBB">&nbsp;</th>
+              <th width="26%" bgcolor="#00A800">買入</th>
+              <th width="26%" bgcolor="#FF6666">賣出</th>
+              <th width="26%" bgcolor="#EC9637">參考賣出</th>
+              </tr>
+            <tr>
+              <td align="left" bgcolor="#D7F2FF">股票淨值</td>
+              <td align="right" bgcolor="#DDFFDD"><span id="lblBuyAmt2">N/A</span><input type="hidden" id="hdBuyAmount2" name="hdBuyAmount2" /></td>
+              <td align="right" bgcolor="#FFD9D9"><span id="lblSellAmt2">N/A</span><input type="hidden" id="hdSellAmount2" name="hdSellAmount2" /></td>
+              <td align="right" bgcolor="#FEF5DA"><span id="lblSellAmtRef">N/A</span></td>
+              </tr>
+            <tr>
+              <td align="left" bgcolor="#D7F2FF">經紀佣金</td>
+              <td align="right" bgcolor="#DDFFDD"><span id="lblBuyComm2">N/A</span></td>
+              <td align="right" bgcolor="#FFD9D9"><span id="lblSellComm2">N/A</span></td>
+              <td align="right" bgcolor="#FEF5DA"><span id="lblSellCommRef">N/A</span></td>
+              </tr>
+            <tr>
+              <td align="left" bgcolor="#D7F2FF">交易所徵費</td>
+              <td align="right" bgcolor="#DDFFDD"><span id="lblBuyTLFee2">N/A</span></td>
+              <td align="right" bgcolor="#FFD9D9"><span id="lblSellTLFee2">N/A</span></td>
+              <td align="right" bgcolor="#FEF5DA"><span id="lblSellTLFeeRef">N/A</span></td>
+              </tr>
+            <tr>
+              <td align="left" bgcolor="#D7F2FF">證監會徵費</td>
+              <td align="right" bgcolor="#DDFFDD"><span id="lblBuyHTFee2">N/A</span></td>
+              <td align="right" bgcolor="#FFD9D9"><span id="lblSellHTFee2">N/A</span></td>
+              <td align="right" bgcolor="#FEF5DA"><span id="lblSellHTFeeRef">N/A</span></td>
+              </tr>
+            <tr>
+              <td align="left" bgcolor="#D7F2FF">印花稅</td>
+              <td align="right" bgcolor="#DDFFDD"><span id="lblBuyStamp2">N/A</span></td>
+              <td align="right" bgcolor="#FFD9D9"><span id="lblSellStamp2">N/A</span></td>
+              <td align="right" bgcolor="#FEF5DA"><span id="lblSellStampRef">N/A</span></td>
+              </tr>
+            <tr>
+              <td align="left" bgcolor="#D7F2FF">結算費</td>
+              <td align="right" bgcolor="#DDFFDD"><span id="lblBuySFee2">N/A</span></td>
+              <td align="right" bgcolor="#FFD9D9"><span id="lblSellSFee2">N/A</span></td>
+              <td align="right" bgcolor="#FEF5DA"><span id="lblSellSFeeRef">N/A</span></td>
+              </tr>
+            <tr>
+              <td align="left" bgcolor="#D7F2FF">手續費</td>
+              <td align="right" bgcolor="#DDFFDD"><span id="lblBuyFee2">N/A</span></td>
+              <td align="right" bgcolor="#FFD9D9"><span id="lblSellFee2">N/A</span></td>
+              <td align="right" bgcolor="#FEF5DA"><span id="lblSellFeeRef">N/A</span></td>
+              </tr>
+            <tr>
+              <td align="left" bgcolor="#D7F2FF">存倉費</td>
+              <td align="right" bgcolor="#DDFFDD"><span id="lblBuyDFee2">N/A</span></td>
+              <td align="right" bgcolor="#FFD9D9">&nbsp;</td>
+              <td align="right" bgcolor="#FEF5DA">&nbsp;</td>
+              </tr>
+            <tr>
+              <td align="left" bgcolor="#D7F2FF" style="border-top-width:1px; border-top-style:solid; border-top-color:#9A93C1">買賣費用</td>
+              <td align="right" bgcolor="#DDFFDD" style="border-top-width:1px; border-top-style:solid; border-top-color:#96D8AB"><span id="lblBuyCost2">N/A</span><input type="hidden" name="hdBuyCost2" id="hdBuyCost2" /></td>
+              <td align="right" bgcolor="#FFD9D9" style="border-top-width:1px; border-top-style:solid; border-top-color:#D7A2B8"><span id="lblSellCost2">N/A</span><input type="hidden" name="hdSellCost2" id="hdSellCost2" /></td>
+              <td align="right" bgcolor="#FEF5DA" style="border-top-width:1px; border-top-style:solid; border-top-color:#FF9900"><span id="lblSellCostRef">N/A</span></td>
+              </tr>
+            <tr>
+              <td align="left" bgcolor="#D7F2FF"><font color="#006600">實支 / 實得</font></td>
+              <td align="right" bgcolor="#DDFFDD"><span id="lblRealOut2">N/A</span></td>
+              <td align="right" bgcolor="#FFD9D9"><span id="lblRealIn2">N/A</span></td>
+              <td align="right" bgcolor="#FEF5DA"><span id="lblRealInRef">N/A</span></td>
+              </tr>
+            <tr bgcolor="#FFFFFF">
+              <td align="left" bgcolor="#EFEFEF" style="color:#666666">買賣總費</td>
+              <td align="right" bgcolor="#EFEFEF" style="color:#666666"><span id="lblTotalFee2">N/A</span><input type="hidden" id="hdTotalCost2" name="hdTotalCost2" /></td>
+              <td align="left" bgcolor="#EFEFEF" style="color:#666666">參考買賣總費</td>
+              <td align="right" bgcolor="#EFEFEF" style="color:#666666"><span id="lblTotalFeeRef">N/A</span></td>
+              </tr>
+            <tr bgcolor="#FFFFFF">
+              <td align="left"><b>實際收益</b></td>
+              <td align="right"><strong><span id="lblBalance2">N/A</span><input type="hidden" id="hdBalence2" name="hdBalence2" /></strong></td>
+              <td align="left" bgcolor="#FEF5DA">參考實際收益</td>
+              <td align="right" bgcolor="#FEF5DA"><span id="lblBalanceRef">N/A</span></td>
+              </tr>
+            <tr bgcolor="#FFFFFF">
+              <td align="left">&nbsp;</td>
+              <td align="right"><span id="lblBalancePersent2">&nbsp;</span></td>
+              <td align="left" bgcolor="#FEF5DA">&nbsp;</td>
+              <td align="right" bgcolor="#FEF5DA"><span id="lblBalancePersentRef">&nbsp;</span></td>
+              </tr>
+            <tr bgcolor="#FFFFFF">
+              <td colspan="2" rowspan="2" align="center"><input type="button" id="btnAddTrans2" name="btnAddTrans2" class="btnAddTrans" onclick="sm('divNoteReg',350,230);" value="+ 結算表" />
+                <input type="button" name="btnSaveChange2" id="btnSaveChange2" value="儲存變更" class="btnSaveChange" onclick="sm('divModTT',350,230); fetchData_divModTT(); countChar('txtA_comment_TT2','lblCommentTT2_Count', 100); document.getElementById('txtA_comment_TT2').focus(); document.getElementById('txtA_comment_TT2').value=document.getElementById('txtA_comment_TT2').value;" />                    &nbsp;&nbsp;
+                <input type="button" id="btnAddTT2" name="btnAddTT2" value="+ 暫存表" class="btnAddTT" onclick="sm('divNoteReg',350,230);" />
+                <input type="button" name="btnCancelChange2" id="btnCancelChange2" value="取消修改" class="btnCancelChange" onclick="	cancelMod();" /></td>
+              <td bgcolor="#FEF5DA">參考相差*</td>
+              <td align="right" bgcolor="#FEF5DA"><span id="lblDiff">N/A</span></td>
+              </tr>
+            <tr bgcolor="#FFFFFF">
+              <td colspan="2" align="right" bgcolor="#FEF5DA"><span style="color:#666666">* = 賣出實得 - 參考賣出實得</span></td>
+              </tr>
+          </table></td>
+        </tr>
+    </table></td>
+  </tr>
+</table>
+<div id="divNoteSelfSec" style="display:none">
+<table width="300" border="0" cellspacing="0" cellpadding="2">
+  <tr>
+    <td height="24" valign="middle" style="background-image:url(images/warning_header.gif); background-repeat:repeat-x; color:#4F4F00; padding:0px 0px 0px 4px"><strong>未有自訂的證券商</strong></td>
+    <td width="20" align="center" valign="middle" style="background-image:url(images/warning_header.gif); background-repeat:repeat-x"><span style="text-decoration:underline; color:#0066CC" onclick="hm('divNoteSC');"><img src="images/dialog_close.gif" width="11" height="11" style="cursor:pointer" /></span></td>
+  </tr>
+  <tr>
+    <td colspan="2" style="background-color:#FFF5C1; padding:2px 0px 2px 0px"><form action=""><table width="95%" border="0" align="center" cellpadding="2" cellspacing="0">
+      <tr>
+        <td colspan="2"><p>假若本站沒有列閣下所使用的證券商，又或其設定值，如佣金收費等有出入，使用者可自行添加自訂的證券商並輸入有關設定數值。</p>
+          <p>要自訂證券商，可到網站右上方的「設定」中進行設置。你現在需要進入設定頁面中嗎？</p></td>
+      </tr>
+      <tr>
+        <td width="33%">&nbsp;</td>
+        <td width="67%">&nbsp;</td>
+      </tr>
+      <tr>
+        <td height="30" colspan="2" align="center"><input type="button" value="是" onclick="location.href='setting.php'" class="btnYes" />&nbsp;&nbsp;<input type="button" value="否" onclick="hm('divNoteSC');prev_rdSubSec();" class="btnNo" /></td>
+        </tr>
+    </table>
+    </form></td>
+  </tr>
+</table>
+</div>
+<div id="divNoteSC" style="display:none">
+<table width="300" border="0" cellspacing="0" cellpadding="2">
+  <tr>
+    <td height="24" valign="middle" style="background-image:url(images/warning_header.gif); background-repeat:repeat-x; color:#4F4F00; padding:0px 0px 0px 4px"><strong>設定該捷徑安鈕</strong></td>
+    <td width="20" align="center" valign="middle" style="background-image:url(images/warning_header.gif); background-repeat:repeat-x"><span style="text-decoration:underline; color:#0066CC" onclick="hm('divNoteSC');"><img src="images/dialog_close.gif" width="11" height="11" style="cursor:pointer" /></span></td>
+  </tr>
+  <tr>
+    <td colspan="2" style="background-color:#FFF5C1; padding:2px 0px 2px 0px"><form action=""><table width="95%" border="0" align="center" cellpadding="2" cellspacing="0">
+      <tr>
+        <td colspan="2"><p>為方便使用者更能快速地選擇常用的幾個證券商，本站的頁面共提供了三個「捷徑」按鈕以供使用者設定。</p>
+          <p>使用者可以到網站右上方「設定」內的「版面設定」裡設定這些捷徑按鈕。現在你需要進入設定頁面嗎？</p></td>
+      </tr>
+      <tr>
+        <td width="33%">&nbsp;</td>
+        <td width="67%">&nbsp;</td>
+      </tr>
+      <tr>
+        <td height="30" colspan="2" align="center"><input type="button" value="是" onclick="location.href='setting.php'" class="btnYes" />&nbsp;&nbsp;<input type="button" value="否" onclick="hm('divNoteSC');" class="btnNo" /></td>
+        </tr>
+    </table>
+    </form></td>
+  </tr>
+</table>
+</div>
+<div id="divNoteReg" style="display:none">
+<table width="300" border="0" cellspacing="0" cellpadding="2">
+  <tr>
+    <td height="24" valign="middle" style="background-image:url(images/warning_header.gif); background-repeat:repeat-x; color:#4F4F00; padding:0px 0px 0px 4px"><strong>登入 或 成為註冊用戶提示</strong></td>
+    <td width="20" align="center" valign="middle" style="background-image:url(images/warning_header.gif); background-repeat:repeat-x"><span style="text-decoration:underline; color:#0066CC" onclick="hm('divDelTT');"><img src="images/dialog_close.gif" width="11" height="11" style="cursor:pointer" /></span></td>
+  </tr>
+  <tr>
+    <td colspan="2" style="background-color:#FFF5C1; padding:2px 0px 2px 0px"><form action=""><table width="95%" border="0" align="center" cellpadding="2" cellspacing="0">
+      <tr>
+        <td colspan="2">此功能此提供予註冊用戶使用。請閣下先登入本站或成為本站的註冊會員。謝謝。</td>
+      </tr>
+      <tr>
+        <td width="33%">&nbsp;</td>
+        <td width="67%">&nbsp;</td>
+      </tr>
+      <tr>
+        <td height="30" colspan="2" align="center"><input type="button" value="登入 / 註冊" onclick="location.href='login.php'" class="btnYes" style="width:100px" />&nbsp;&nbsp;<input type="button" value="暫不需要" onclick="hm('divNoteReg');" class="btnNo" style="width:90px" /></td>
+        </tr>
+    </table>
+    </form></td>
+  </tr>
+</table>
+</div>
+<div id="divDelTT" style="display:none">
+<table width="300" border="0" cellspacing="0" cellpadding="2">
+  <tr>
+    <td height="24" valign="middle" style="background-image:url(images/warning_header.gif); background-repeat:repeat-x; color:#4F4F00; padding:0px 0px 0px 4px"><strong>移除資料暫存表中的指定記錄</strong></td>
+    <td width="20" align="center" valign="middle" style="background-image:url(images/warning_header.gif); background-repeat:repeat-x"><span style="text-decoration:underline; color:#0066CC" onclick="hm('divDelTT');"><img src="images/dialog_close.gif" width="11" height="11" style="cursor:pointer" /></span></td>
+  </tr>
+  <tr>
+    <td colspan="2" style="background-color:#FFF5C1; padding:2px 0px 2px 0px"><form action=""><table width="95%" border="0" align="center" cellpadding="2" cellspacing="0">
+      <tr>
+        <td colspan="2">是否要移除指定的記錄?</td>
+      </tr>
+      <tr>
+        <td width="33%">&nbsp;</td>
+        <td width="67%">&nbsp;</td>
+      </tr>
+      <tr>
+        <td height="30" colspan="2" align="center"><input type="button" value="是" onclick="del_tt(); hm('divDelTT');" class="btnYes" />&nbsp;&nbsp;<input type="button" value="否" onclick="hm('divDelTT');" class="btnNo" /></td>
+        </tr>
+    </table>
+    </form></td>
+  </tr>
+</table>
+</div>
+<div id="divAddTT" style="display:none">
+<table width="350" border="0" cellspacing="0" cellpadding="2">
+  <tr>
+    <td width="322" height="24" valign="middle" style="background-image:url(images/prompt_header.gif); background-repeat:repeat-x; color:#0F4382; padding:0px 0px 0px 4px"><strong>將資料加到交易資料暫存表</strong></td>
+    <td width="20" align="center" valign="middle" style="background-image:url(images/prompt_header.gif); background-repeat:repeat-x"><span style="text-decoration:underline; color:#0066CC" onclick="hm('divAddTT');"><img src="images/dialog_close.gif" width="11" height="11" style="cursor:pointer" /></span></td>
+  </tr>
+  <tr>
+    <td colspan="2" style="background-color:#eee;"><form action=""><table width="95%" border="0" align="center" cellpadding="2" cellspacing="0">
+      <tr>
+        <td colspan="2">需要想將計算機上的資料加到交易資料暫存表中，請填妥以下資料然後按確定。</td>
+      </tr>
+      <tr>
+        <td width="33%">&nbsp;</td>
+        <td width="67%">&nbsp;
+          <input type="hidden" id="hdInputMode" name="hdInputMode" />
+        <input type="hidden" id="hdInputData" name="hdInputData" />
+        <input type="hidden" id="hdParam" name="hdParam" />
+        <input type="hidden" id="hdSelfSecID" name="hdSelfSecID" />
+        <input type="hidden" id="hdSubSecID" name="hdSubSecID" />
+        <input type="hidden" id="hdBuyAmt" name="hdBuyAmt" />
+        <input type="hidden" id="hdSellAmt" name="hdSellAmt" />
+        <input type="hidden" id="hdTransCost" name="hdTransCost" />
+        <input type="hidden" id="hdNetProfit" name="hdNetProfit" />
+        </td>
+      </tr>
+      <tr>
+        <td>有效股票代號:</td>
+        <td><input type="text" name="txtStockCode_TT" id="txtStockCode_TT" maxlength="5" style="width:50px" />
+        <span id="divAddTT_lblCodeErr" style="color:#FF0000">(例: 中國銀行, 請輸入3328)</span>
+          </td>
+      </tr>
+      <tr>
+        <td valign="top">備註 ( 剩餘<span id="lblCommentTT_Count">100</span>字 ):</td>
+        <td><textarea name="txtA_comment_TT" id="txtA_comment_TT" rows="4" onkeyup="countChar('txtA_comment_TT','lblCommentTT_Count', 100);" style="width:210px"></textarea></td>
+      </tr>
+      <tr>
+        <td height="30" colspan="2" align="center"><input type="button" value="確定" onclick="add_tt();" /> <input type="button" value="取消" onclick="hm('divAddTT');" /></td>
+        </tr>
+    </table></form></td>
+  </tr>
+</table>
+</div>
+<div id="divModTT" style="display:none">
+<table width="350" border="0" cellspacing="0" cellpadding="2">
+  <tr>
+    <td width="322" height="24" valign="middle" style="background-image:url(images/prompt_header.gif); background-repeat:repeat-x; color:#0F4382; padding:0px 0px 0px 4px"><strong>儲存變更了的資料到資料暫存表中</strong></td>
+    <td width="20" align="center" valign="middle" style="background-image:url(images/prompt_header.gif); background-repeat:repeat-x"><span style="text-decoration:underline; color:#0066CC" onclick="hm('divModTT');"><img src="images/dialog_close.gif" width="11" height="11" style="cursor:pointer" /></span></td>
+  </tr>
+  <tr>
+    <td colspan="2" style="background-color:#eee;"><form action=""><table width="95%" border="0" align="center" cellpadding="2" cellspacing="0">
+      <tr>
+        <td colspan="2">在儲存變更了的資料到暫存資料表之前，你可以修改備註內容。修改完成後請按「儲存變更」。</td>
+      </tr>
+      <tr>
+        <td width="33%">&nbsp;</td>
+        <td width="67%">&nbsp;
+          <input type="hidden" id="hdInputMode2" name="hdInputMode2" />
+        <input type="hidden" id="hdInputData2" name="hdInputData2" />
+        <input type="hidden" id="hdParam2" name="hdParam2" />
+        <input type="hidden" id="hdSelfSecID2" name="hdSelfSecID2" />
+        <input type="hidden" id="hdSubSecID2" name="hdSubSecID2" />
+        <input type="hidden" id="hdBuyAmt2" name="hdBuyAmt2" />
+        <input type="hidden" id="hdSellAmt2" name="hdSellAmt2" />
+        <input type="hidden" id="hdTransCost2" name="hdTransCost2" />
+        <input type="hidden" id="hdNetProfit2" name="hdNetProfit2" />
+        </td>
+      </tr>
+      <tr>
+        <td>股票代號:</td>
+        <td><input type="text" name="txtStockCode_TT2" id="txtStockCode_TT2" maxlength="5" style="width:50px" disabled="disabled" /></td>
+      </tr>
+      <tr>
+        <td valign="top">備註 ( 剩餘<span id="lblCommentTT2_Count">100</span>字 ):</td>
+        <td><textarea name="txtA_comment_TT2" id="txtA_comment_TT2" rows="4" onkeyup="countChar('txtA_comment_TT2','lblCommentTT2_Count', 100);" style="width:210px"></textarea></td>
+      </tr>
+      <tr>
+        <td height="30" colspan="2" align="center"><input type="button" value="儲存變更" onclick="mod_tt(); hm('divModTT');" /> <input type="button" value="取消" onclick="hm('divModTT');" /></td>
+        </tr>
+    </table></form></td>
+  </tr>
+</table>
+</div>
+<div id="divAddTrans" style="display:none">
+<table width="350" border="0" cellspacing="0" cellpadding="2">
+  <tr>
+    <td width="322" height="24" valign="middle" style="background-image:url(images/error_header.gif); background-repeat:repeat-x; color:#9B0000; padding:0px 0px 0px 4px"><strong>將計算結果儲存到結算表中</strong></td>
+    <td width="20" align="center" valign="middle" style="background-image:url(images/error_header.gif); background-repeat:repeat-x"><span style="text-decoration:underline; color:#0066CC" onclick="hm('divAddTrans');"><img src="images/dialog_close.gif" width="11" height="11" style="cursor:pointer" /></span></td>
+  </tr>
+  <tr>
+    <td colspan="2" style="background-color:#F1E1E0;"><form action=""><table width="95%" border="0" align="center" cellpadding="2" cellspacing="0">
+      <tr>
+        <td colspan="2">填妥以下資料，你便可以將計算結果加到結算表中，落實你的交易結果，完整記錄你的投資表現。</td>
+      </tr>
+      <tr>
+        <td width="33%">&nbsp;</td>
+        <td width="67%">&nbsp;</td>
+      </tr>
+      <tr>
+        <td valign="middle">交易日期:</td>
+        <td><select name="yrFrm_Trans" id="yrFrm_Trans">
+                    <option value="2008">2008年</option>
+                    <option value="2009">2009年</option>
+                    <option value="2010">2010年</option>
+                    <option value="2011">2011年</option>
+                    <option value="2012">2012年</option>
+                    <option value="2013" selected>2013年</option>
+                  </select>
+          <select name="monFrm_Trans" id="monFrm_Trans">
+                        <option value="1">1月</option>
+                        <option value="2">2月</option>
+                        <option value="3">3月</option>
+                        <option value="4">4月</option>
+                        <option value="5">5月</option>
+                        <option value="6">6月</option>
+                        <option value="7">7月</option>
+                        <option value="8">8月</option>
+                        <option value="9">9月</option>
+                        <option value="10" selected>10月</option>
+                        <option value="11">11月</option>
+                        <option value="12">12月</option>
+                      </select>
+          <select name="dayFrm_Trans" id="dayFrm_Trans">
+                        <option value="1">1日</option>
+                        <option value="2">2日</option>
+                        <option value="3">3日</option>
+                        <option value="4">4日</option>
+                        <option value="5">5日</option>
+                        <option value="6">6日</option>
+                        <option value="7">7日</option>
+                        <option value="8">8日</option>
+                        <option value="9">9日</option>
+                        <option value="10">10日</option>
+                        <option value="11">11日</option>
+                        <option value="12" selected>12日</option>
+                        <option value="13">13日</option>
+                        <option value="14">14日</option>
+                        <option value="15">15日</option>
+                        <option value="16">16日</option>
+                        <option value="17">17日</option>
+                        <option value="18">18日</option>
+                        <option value="19">19日</option>
+                        <option value="20">20日</option>
+                        <option value="21">21日</option>
+                        <option value="22">22日</option>
+                        <option value="23">23日</option>
+                        <option value="24">24日</option>
+                        <option value="25">25日</option>
+                        <option value="26">26日</option>
+                        <option value="27">27日</option>
+                        <option value="28">28日</option>
+                        <option value="29">29日</option>
+                        <option value="30">30日</option>
+                        <option value="31">31日</option>
+                      </select><span id="divAddTrans_lblDateErr"></span></td>
+      </tr>
+      <tr>
+        <td valign="middle">股票代號:</td>
+        <td><input type="text" name="txtStockCode_Trans" id="txtStockCode_Trans" maxlength="5" style="width:80px" /><span id="divAddTrans_lblCodeErr" style="color:#FF0000"></span></td>
+      </tr>
+      <tr>
+        <td valign="middle">買賣股數:</td>
+        <td><input name="txtShare_Trans" type="text" id="txtShare_Trans" maxlength="8" style="width:80px"  /><span id="divAddTrans_lblShareErr" style="color:#FF0000"></span></td>
+      </tr>
+      <tr>
+        <td valign="middle">買入價位:</td>
+        <td><input name="txtBuyAt_Trans" type="text" id="txtBuyAt_Trans" style="width:80px" maxlength="7"  /><span id="divAddTrans_lblBuyErr" style="color:#FF0000"></span></td>
+      </tr>
+      <tr>
+        <td valign="middle">賣出價位:</td>
+        <td><input name="txtSellAt_Trans" type="text" id="txtSellAt_Trans" style="width:80px" maxlength="7"  /><span id="divAddTrans_lblSellErr" style="color:#FF0000"></span></td>
+      </tr>
+      <tr>
+        <td valign="middle">買入費用:</td>
+        <td><input name="txtBuyFee_Trans" type="text" id="txtBuyFee_Trans" style="width:80px" maxlength="8"  /><span id="divAddTrans_lblBuyFeeErr" style="color:#FF0000"></span></td>
+      </tr>
+      <tr>
+        <td valign="middle">賣出費用:
+          </td>
+        <td><input name="txtSellFee_Trans" type="text" id="txtSellFee_Trans" style="width:80px" maxlength="8"  /><span id="divAddTrans_lblSellFeeErr" style="color:#FF0000"></span></td>
+      </tr>
+      <tr>
+        <td height="30" colspan="2" align="center"><input type="button" value="儲存變更" onclick="add_trans();" /> <input type="button" value="取消" onclick="hideIt();hm('divAddTrans');" /></td>
+        </tr>
+    </table>
+    </form></td>
+  </tr>
+</table>
+</div>
+<script language="javascript">
+change_rdSubSec(10);
+selectSec(10,0);
+setDeposit();
+showResult(inputMode);
+showSecInfo();
+showSignsIntro();
+showAimsIntro();
+show_tt_table();
+placeIt();
+newly_question();
+document.getElementById("buyAt").select();
+</script>
+
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-6836576-5', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>
